@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oc/widgets/createacc.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -20,12 +21,20 @@ class SplashScreen extends StatelessWidget {
                   backgroundColor:
                       Colors.white, // Optional: add background color
                   child: ClipOval(
-                    child: Image.asset(
-                      'assets/images/juitlogo.jpeg',
-                      fit: BoxFit
-                          .contain, // Ensure the image fits within the circle
-                      width: 90, // Adjust width and height if necessary
-                      height: 90,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CreateAccount()));
+                      },
+                      child: Image.asset(
+                        'assets/images/juitlogo.jpeg',
+                        fit: BoxFit
+                            .contain, // Ensure the image fits within the circle
+                        width: 90, // Adjust width and height if necessary
+                        height: 90,
+                      ),
                     ),
                   ),
                 ),
