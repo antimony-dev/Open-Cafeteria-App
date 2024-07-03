@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oc/widgets/splash_screen.dart';
+import 'package:oc/widgets/Sign_In_Page.dart';
 
 void main() => runApp(new MyApp());
 

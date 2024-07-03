@@ -8,7 +8,7 @@ class SplashScreen extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Image.asset(
-            'assets/pexels-photo-1633578.png',
+            'assets/images/pexels-photo-1633578.png',
             fit: BoxFit.cover,
           ),
           Center(
@@ -21,7 +21,7 @@ class SplashScreen extends StatelessWidget {
                       Colors.white, // Optional: add background color
                   child: ClipOval(
                     child: Image.asset(
-                      'assets/juitlogo.jpeg',
+                      'assets/images/juitlogo.jpeg',
                       fit: BoxFit
                           .contain, // Ensure the image fits within the circle
                       width: 90, // Adjust width and height if necessary
