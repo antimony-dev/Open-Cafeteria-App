@@ -1,38 +1,36 @@
 import 'package:flutter/material.dart';
 
-//abcd
 class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            Image.asset(
-              'assets/pexels-photo-1633578.png',
-              height: 100,
-              width: 100,
-              fit: BoxFit.cover,
-            ),
-            Column(
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(
+            'assets/images/pexels-photo-1633578.png',
+            fit: BoxFit.cover,
+          ),
+          Center(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Padding(
-                  padding:
-                      EdgeInsets.only(top: 150.0), // Adjust padding as needed
-                ),
-                Center(
-                  child: CircleAvatar(
-                    radius: 50, // Adjust size as needed
-                    backgroundImage: AssetImage('assets/juitlogo.jpeg'),
+                CircleAvatar(
+                  radius: 50,
+                  backgroundColor:
+                      Colors.white, // Optional: add background color
+                  child: ClipOval(
+                    child: Image.asset(
+                      'assets/images/juitlogo.jpeg',
+                      fit: BoxFit
+                          .contain, // Ensure the image fits within the circle
+                      width: 90, // Adjust width and height if necessary
+                      height: 90,
+                    ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 250.0),
-                ),
                 Text(
-                  'welcome back',
+                  'Welcome Back',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 24.0,
@@ -41,14 +39,15 @@ class SplashScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                  padding: EdgeInsets.symmetric(horizontal: 32.0),
                   child: Column(
                     children: [
                       TextField(
                         decoration: InputDecoration(
                           hintText: 'Email',
-                          fillColor: Colors.white,
                           filled: true,
+                          fillColor: Colors.white,
+                          hintStyle: TextStyle(color: Colors.green),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30.0),
                             borderSide: BorderSide.none,
@@ -61,6 +60,7 @@ class SplashScreen extends StatelessWidget {
                           hintText: 'Password',
                           fillColor: Colors.white,
                           filled: true,
+                          hintStyle: TextStyle(color: Colors.green),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30.0),
                             borderSide: BorderSide.none,
@@ -93,7 +93,7 @@ class SplashScreen extends StatelessWidget {
                           TextButton(
                             onPressed: () {},
                             child: Text(
-                              'create account',
+                              'Create Account',
                               style: TextStyle(color: Color(0xFFFF6F61)),
                             ),
                           ),
@@ -104,8 +104,8 @@ class SplashScreen extends StatelessWidget {
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
