@@ -17,10 +17,8 @@ class SplashScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  // Wrap the Column with Padding to shift it down
                   Padding(
-                    padding: const EdgeInsets.only(
-                        top: 100.0), // Adjust top padding as needed
+                    padding: const EdgeInsets.only(top: 100.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
