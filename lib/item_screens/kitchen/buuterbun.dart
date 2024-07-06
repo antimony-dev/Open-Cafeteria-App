@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  MyApp({super.key});
+class butterbun extends StatelessWidget {
+  butterbun({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.teal,
           leading:BackButton(color: Colors.black,)
@@ -87,7 +82,6 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }
