@@ -16,13 +16,13 @@ class vegchow extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/burger.jpeg'),
+                  image: AssetImage('assets/images/kitchen.jpeg'),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
             Container(
-              color: Colors.black.withOpacity(0.6), // Dark overlay to make text readable
+              color: Colors.black.withOpacity(0.4), // Dark overlay to make text readable
             ),
             Padding(
               padding: EdgeInsets.all(40.0),
@@ -35,7 +35,7 @@ class vegchow extends StatelessWidget {
                         height: 350,
                         width: 350,
                         decoration: BoxDecoration(
-                          image: DecorationImage(image: AssetImage('assets/images/burger.jpeg'
+                          image: DecorationImage(image: AssetImage('assets/images/kitchen.jpeg'
                           ),
                           fit: BoxFit.cover,
                           ),
@@ -52,25 +52,27 @@ class vegchow extends StatelessWidget {
                       children: [
                         SizedBox(height: 260), // Adjust according to image height
                         Text(
-                          'borgir',
+                          '\nVEG. CHOWMEIN',
                           style: TextStyle(
                             fontSize: 50,
                             fontWeight: FontWeight.bold,
-                            color: Colors.lightGreenAccent,
+                            color: Colors.white,
                           ),
                         ),
                         SizedBox(height: 10),
                         Text(
-                          'Juicy aloo patty, uncle ki mayoni, crispy shimla mirch, crunchy cucumber, and tangy tomato on a toasted bun.',
+                          '\nSavory stir-fried noodles with vegetables and flavorful Asian spices.',
                           style: TextStyle(color: Colors.white70,
-                          fontSize: 20,),
+                          fontSize: 25,),
                           textAlign: TextAlign.center,
                         ),
                         SizedBox(height: 20),
                         Text(
-                          'Price: ₹ 30',
+                          '\nPrice: ₹ 22',
                           style: TextStyle(fontSize: 30
-                          , color: Colors.cyanAccent[200]),
+                          , color: Colors.amber,
+                          fontWeight: FontWeight.bold,
+                          ),
                         ),
                         SizedBox(height: 30),
                         

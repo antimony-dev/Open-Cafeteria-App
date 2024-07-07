@@ -1,6 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:oc/home/home_bakery.dart';
+import 'package:oc/home/home_coldrinks.dart';
+import 'package:oc/home/home_hotdrinks.dart';
+import 'package:oc/home/home_ice.dart';
+import 'package:oc/home/home_kitchen.dart';
+import 'package:oc/home/home_ready.dart';
+import 'package:oc/home/home_special.dart';
 import 'package:oc/item_screens/colddrinks/appy.dart';
 
 
@@ -32,14 +39,14 @@ class home_page extends StatelessWidget {
                     ListTile(
                       hoverColor: Colors.blue,
                       leading: Icon(Icons.all_inclusive_rounded),
-                      title: Text("SPECIALS",
+                      title: Text("SPECIAL",
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                       ),
                       ),
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => appy())),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => home_special())),
             
                     ),
                     Divider(
@@ -55,7 +62,7 @@ class home_page extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                       ),
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => appy())),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => home_bakery())),
             
                     ),
                     Divider(
@@ -71,7 +78,7 @@ class home_page extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                       ),
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => appy())),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => home_hotdrinks())),
             
                     ),
                     Divider(
@@ -87,7 +94,7 @@ class home_page extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                       ),
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => appy())),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => home_coldrinks())),
             
                     ),
                     Divider(
@@ -103,7 +110,7 @@ class home_page extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                       ),
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => appy())),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => home_kitchen())),
             
                     ),
                     Divider(
@@ -119,7 +126,7 @@ class home_page extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                       ),
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => appy())),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => home_ready())),
             
                     ),
                     Divider(
@@ -134,7 +141,7 @@ class home_page extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                       ),
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => appy())),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => home_ice())),
             
                     ),
                     Divider(
@@ -201,7 +208,7 @@ class home_page extends StatelessWidget {
   borderOnForeground: true,
        child: InkWell(
             onTap: () =>
-            Navigator.push(context, MaterialPageRoute(builder: (context) => appy())),
+            Navigator.push(context, MaterialPageRoute(builder: (context) => home_special())),
             child: Container(
               
               width:150,
@@ -239,7 +246,7 @@ class home_page extends StatelessWidget {
   shadowColor: Colors.black,
        child: InkWell(
             onTap: () => Navigator.push(context,
-        MaterialPageRoute(builder: (context) => appy()
+        MaterialPageRoute(builder: (context) => home_bakery()
         ),
         ),
             child: Container(
@@ -278,7 +285,7 @@ class home_page extends StatelessWidget {
   shadowColor: Colors.black,
        child: InkWell(
             onTap: () => Navigator.push(context,
-        MaterialPageRoute(builder: (context) => appy()
+        MaterialPageRoute(builder: (context) => home_hotdrinks()
         ),
         ),
             child: Container(
@@ -317,7 +324,7 @@ class home_page extends StatelessWidget {
   shadowColor: Colors.black,
        child: InkWell(
             onTap: () => Navigator.push(context,
-        MaterialPageRoute(builder: (context) => appy()
+        MaterialPageRoute(builder: (context) => home_coldrinks()
         ),
         ),
             child: Container(
@@ -356,7 +363,7 @@ class home_page extends StatelessWidget {
   shadowColor: Colors.black,
        child: InkWell(
             onTap: () => Navigator.push(context,
-        MaterialPageRoute(builder: (context) => appy()
+        MaterialPageRoute(builder: (context) => home_kitchen()
         ),
         ),
             child: Container(
@@ -395,7 +402,7 @@ class home_page extends StatelessWidget {
   shadowColor: Colors.black,
        child: InkWell(
             onTap: () => Navigator.push(context,
-        MaterialPageRoute(builder: (context) => appy()
+        MaterialPageRoute(builder: (context) => home_ready()
         ),
         ),
             child: Container(
@@ -433,7 +440,7 @@ class home_page extends StatelessWidget {
   shadowColor: Colors.black,
        child: InkWell(
             onTap: () => Navigator.push(context,
-        MaterialPageRoute(builder: (context) => appy()
+        MaterialPageRoute(builder: (context) => home_ice()
         ),
         ),
             child: Container(
