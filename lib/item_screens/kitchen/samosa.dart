@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class samosa extends StatelessWidget {
   samosa({super.key});
 
-  @override
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -16,13 +16,13 @@ class samosa extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/burger.jpeg'),
+                  image: AssetImage('assets/images/samosa.jpeg'),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
             Container(
-              color: Colors.black.withOpacity(0.6), // Dark overlay to make text readable
+              color: Colors.black.withOpacity(0.4), // Dark overlay to make text readable
             ),
             Padding(
               padding: EdgeInsets.all(40.0),
@@ -35,7 +35,7 @@ class samosa extends StatelessWidget {
                         height: 350,
                         width: 350,
                         decoration: BoxDecoration(
-                          image: DecorationImage(image: AssetImage('assets/images/burger.jpeg'
+                          image: DecorationImage(image: AssetImage('assets/images/samosa.jpeg'
                           ),
                           fit: BoxFit.cover,
                           ),
@@ -52,25 +52,27 @@ class samosa extends StatelessWidget {
                       children: [
                         SizedBox(height: 260), // Adjust according to image height
                         Text(
-                          'borgir',
+                          '\nSAMOSA',
                           style: TextStyle(
                             fontSize: 50,
                             fontWeight: FontWeight.bold,
-                            color: Colors.lightGreenAccent,
+                            color: Colors.white,
                           ),
                         ),
                         SizedBox(height: 10),
                         Text(
-                          'Juicy aloo patty, uncle ki mayoni, crispy shimla mirch, crunchy cucumber, and tangy tomato on a toasted bun.',
+                          '\nA crispy pastry filled with spiced potatoes and peas.',
                           style: TextStyle(color: Colors.white70,
-                          fontSize: 20,),
+                          fontSize: 25,),
                           textAlign: TextAlign.center,
                         ),
                         SizedBox(height: 20),
                         Text(
-                          'Price: ₹ 30',
+                          '\nPrice: ₹ 10',
                           style: TextStyle(fontSize: 30
-                          , color: Colors.cyanAccent[200]),
+                          , color: Colors.amber,
+                          fontWeight: FontWeight.bold,
+                          ),
                         ),
                         SizedBox(height: 30),
                         
