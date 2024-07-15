@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oc/home/home_page.dart';
 import 'package:oc/item_screens/itemScreen.dart';
 //import 'package:oc/item_screens/itemScreen.dart';
 //import 'package:oc/sign%20up_in/createacc.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           brightness: Brightness.dark, primaryColor: Colors.deepPurple),
-      home: Item_Screen(),
+      home:home_page(),
     );
   }
 }
