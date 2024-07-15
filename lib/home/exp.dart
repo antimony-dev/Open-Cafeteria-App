@@ -1,23 +1,60 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'package:intl/intl.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:oc/home/home_kitchen.dart';
 
-void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
+// List of Cards with color and icon
+List<Widget> _listTile = <Widget>[
+  BackGroundTile( text: "Home",
+    img: 'assets/images/special.jpeg',
+  
+  ),
+  BackGroundTile( text: "AC Unit",img: 'assets/images/special.jpeg',),
+  BackGroundTile( text: "Landscape",
+    img: 'assets/images/special.jpeg',
+  ),
+  BackGroundTile( text: "Portrait",
+    img: 'assets/images/special.jpeg',
+  ),
+  BackGroundTile( text: "Music",
+    img: 'assets/images/special.jpeg',
+  ),
+  BackGroundTile( text: "Alarms",
+    img: 'assets/images/special.jpeg',
+  ),
+  BackGroundTile( text: "Satellite",
+    img: 'assets/images/special.jpeg',
+  ),
+  BackGroundTile( text: "Search",
+    img: 'assets/images/special.jpeg',
+  ),
+  BackGroundTile( text: "Adjust",
+    img: 'assets/images/special.jpeg',
+  ),
+  BackGroundTile( text: "Money",
+    img: 'assets/images/special.jpeg',
+  ),
+];
+
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Infinite Auto-Scrolling Image Carousel Card'),
-        ),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ImageCarouselCard(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("GFG App"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: SingleChildScrollView(
+          child: StaggeredGrid.count(
+            crossAxisCount: 4,
+            mainAxisSpacing: 4.0,
+            crossAxisSpacing: 4.0,
+            children: _cardTile,
           ),
         ),
       ),
@@ -25,137 +62,80 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class ImageCarouselCard extends StatefulWidget {
-  @override
-  _ImageCarouselCardState createState() => _ImageCarouselCardState();
-}
+// List of Cards with size
+List<Widget> _cardTile = <Widget>[
+  StaggeredGridTile.count(
+      crossAxisCellCount: 4, mainAxisCellCount: 3, child: _listTile[0]),
+  StaggeredGridTile.count(
+      crossAxisCellCount: 2, mainAxisCellCount: 2, child: _listTile[1]),
+  StaggeredGridTile.count(
+      crossAxisCellCount: 2, mainAxisCellCount: 3, child: _listTile[2]),
+  StaggeredGridTile.count(
+      crossAxisCellCount: 2, mainAxisCellCount: 2, child: _listTile[3]),
+  StaggeredGridTile.count(
+      crossAxisCellCount: 2, mainAxisCellCount: 3, child: _listTile[4]),
+  StaggeredGridTile.count(
+      crossAxisCellCount: 2, mainAxisCellCount: 2, child: _listTile[5]),
+  StaggeredGridTile.count(
+      crossAxisCellCount: 2, mainAxisCellCount: 3, child: _listTile[6]),
+  StaggeredGridTile.count(
+      crossAxisCellCount: 2, mainAxisCellCount: 2, child: _listTile[7]),
+  StaggeredGridTile.count(
+      crossAxisCellCount: 2, mainAxisCellCount: 3, child: _listTile[8]),
+  StaggeredGridTile.count(
+      crossAxisCellCount: 2, mainAxisCellCount: 2, child: _listTile[9]),
+];
 
-class _ImageCarouselCardState extends State<ImageCarouselCard> {
-  late List<String> imageUrls;
-  final PageController _pageController = PageController(initialPage: 1);
-  Timer? _timer;
+class BackGroundTile extends StatelessWidget {
+  final String text;
+  final String img;
 
-  @override
-  void initState() {
-    super.initState();
-
-    // Initialize imageUrls based on the day of the week
-    _initializeImageUrls();
-
-    _pageController.addListener(() {
-      int currentPage = _pageController.page!.round();
-      if (currentPage == 0) {
-        _pageController.jumpToPage(imageUrls.length);
-      } else if (currentPage == imageUrls.length + 1) {
-        _pageController.jumpToPage(1);
-      }
-    });
-
-    _startAutoScroll();
-  }
-
-  void _initializeImageUrls() {
-    final dayOfWeek = DateFormat('EEEE').format(DateTime.now());
-    final allImages = {
-      'Monday': [
-        'https://via.placeholder.com/300x200.png?text=Monday+1',
-        'https://via.placeholder.com/300x200.png?text=Monday+2',
-        'https://via.placeholder.com/300x200.png?text=Monday+3',
-      ],
-      'Tuesday': [
-        'https://via.placeholder.com/300x200.png?text=Tuesday+1',
-        'https://via.placeholder.com/300x200.png?text=Tuesday+2',
-        'https://via.placeholder.com/300x200.png?text=Tuesday+3',
-      ],
-      'Wednesday': [
-        'https://via.placeholder.com/300x200.png?text=Wednesday+1',
-        'https://via.placeholder.com/300x200.png?text=Wednesday+2',
-        'https://via.placeholder.com/300x200.png?text=Wednesday+3',
-      ],
-      'Thursday': [
-        'https://via.placeholder.com/300x200.png?text=Thursday+1',
-        'https://via.placeholder.com/300x200.png?text=Thursday+2',
-        'https://via.placeholder.com/300x200.png?text=Thursday+3',
-      ],
-      'Friday': [
-        'https://via.placeholder.com/300x200.png?text=Friday+1',
-        'https://via.placeholder.com/300x200.png?text=Friday+2',
-        'https://via.placeholder.com/300x200.png?text=Friday+3',
-      ],
-      'Saturday': [
-        'https://via.placeholder.com/300x200.png?text=Saturday+1',
-        'https://via.placeholder.com/300x200.png?text=Saturday+2',
-        'https://via.placeholder.com/300x200.png?text=Saturday+3',
-      ],
-      'Sunday': [
-        'https://via.placeholder.com/300x200.png?text=Sunday+1',
-        'https://via.placeholder.com/300x200.png?text=Sunday+2',
-        'https://via.placeholder.com/300x200.png?text=Sunday+3',
-      ],
-    };
-    imageUrls = allImages[dayOfWeek]!;
-  }
-
-  void _startAutoScroll() {
-    _timer = Timer.periodic(Duration(seconds: 3), (timer) {
-      int nextPage = _pageController.page!.round() + 1;
-      _pageController.animateToPage(
-        nextPage,
-        duration: Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    });
-  }
+  const BackGroundTile({ required this.text,required this . img});
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Card Tapped!')),
-        );
-      },
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15.0),
-        ),
-        elevation: 5,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(15.0),
-          child: Container(
-            height: 250,
-            child: PageView.builder(
-              controller: _pageController,
-              itemCount: imageUrls.length + 2,
-              itemBuilder: (context, index) {
-                if (index == 0) {
-                  return Image.network(
-                    imageUrls[imageUrls.length - 1],
-                    fit: BoxFit.cover,
-                  );
-                } else if (index == imageUrls.length + 1) {
-                  return Image.network(
-                    imageUrls[0],
-                    fit: BoxFit.cover,
-                  );
-                } else {
-                  return Image.network(
-                    imageUrls[index - 1],
-                    fit: BoxFit.cover,
-                  );
-                }
-              },
+    return Card(
+      elevation: 10,
+      shadowColor: Colors.black,
+      child: InkWell(
+        onTap: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => home_kitchen())),
+        child: Container(
+          width: 150,
+          height: 150,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.amberAccent,
+              width: 2.0,
             ),
+            image: DecorationImage(
+              image: AssetImage(img),
+              fit: BoxFit.cover,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.5),
+                blurRadius: 10.0,
+                offset: Offset(0.0, 10.0),
+              )
+            ],
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                text,
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _timer?.cancel();
-    _pageController.dispose();
-    super.dispose();
   }
 }
