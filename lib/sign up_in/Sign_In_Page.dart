@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Image.asset(
-            'assets/images/pexels-photo-1633578.png',
+            'assets/images/SignInpagePhoto.jpg',
             fit: BoxFit.cover,
           ),
           Center(

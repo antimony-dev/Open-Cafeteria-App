@@ -19,7 +19,7 @@ class JuitCafeHomePage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/burger.jpeg'),
+                image: AssetImage('assets/images/SignInpagePhoto.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
